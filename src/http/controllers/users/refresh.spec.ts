@@ -30,8 +30,6 @@ describe('Refresh Token (e2e)', () => {
       .set('Cookie', cookies)
       .send()
 
-    console.log(response)
-
     expect(response.statusCode).toEqual(200)
     expect(response.body).toEqual({
       token: expect.any(String),
