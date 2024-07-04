@@ -3,7 +3,7 @@ name: Run Unit Tests
 on: [push]
 
 jobs: 
-  tun-unit-test:
+  run-unit-test:
     name: Run Unit Test
     runs-on: ubuntu-latest
 
