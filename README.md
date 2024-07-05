@@ -41,7 +41,7 @@ Para rodar este projeto, siga os passos abaixo:
 
     ```bash
     git clone https://github.com/AlanRehfeldt/Rocketseat_IgniteNode-03_api_solid
-    cd cd Rocketseat_IgniteNode-03_api_solid
+    cd Rocketseat_IgniteNode-03_api_solid
     ```
 
 2. Instale as dependências:
