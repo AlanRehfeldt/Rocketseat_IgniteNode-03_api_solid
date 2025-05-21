@@ -2,10 +2,8 @@ import 'dotenv/config'
 
 import { randomUUID } from 'node:crypto'
 import { execSync } from 'node:child_process'
-import { Environment } from 'vitest'
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import { Environment } from 'vitest/environments'
+import { prisma } from '@/lib/prisma'
 
 function generateDatabaseUrl(schema: string) {
   if (!process.env.DATABASE_URL) {
@@ -19,11 +17,10 @@ function generateDatabaseUrl(schema: string) {
   return url.toString()
 }
 
-export default <Environment>(<unknown>{
+export default <Environment>{
   name: 'prisma',
   async setup() {
     const schema = randomUUID()
-
     const databaseUrl = generateDatabaseUrl(schema)
 
     process.env.DATABASE_URL = databaseUrl
@@ -40,4 +37,4 @@ export default <Environment>(<unknown>{
     }
   },
   transformMode: 'ssr',
-})
+}
